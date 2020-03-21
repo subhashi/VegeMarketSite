@@ -5,12 +5,16 @@
     <div class="row">
         {% for fruit in fruits %}
             <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div class="card m-2" style="width: 18rem;">
                     <img src={{fruit.image_url}} class="card-img-top" height="200" width="100" >
                     <div class="card-body">
                         <h5 class="card-title">{{ fruit.name }}</h5>
-                        <p class="card-text">${{ fruit.price }}</p>
-                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Add to cart</a>
+                        <p class="card-text">${{ fruit.price }}/kg</p>
+                        {% if fruit.stock > 0%}
+                            <p class="card-text p-3 mb-2 bg-success text-white">In Stock: <strong>{{ fruit.stock }}kg</strong></p>
+                        {% else %}
+                            <p class="card-text p-3 mb-2 bg-danger text-white">Out of Stock</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
