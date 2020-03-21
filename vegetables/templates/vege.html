@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Vegetables</h1>
+    <h1 class="h2 p-3 mb-3 bg-light text-dark">Vegetables</h1>
     <div class="row">
         {% for vegetable in vegetables %}
             <div class="col">
-                <div class="card m-2" style="width: 18rem;">
+                <div class="card mb-2" style="width: 18rem;">
                     <img src={{vegetable.image_url}} class="card-img-top" height="200" width="100" >
                     <div class="card-body">
                         <h5 class="card-title">{{ vegetable.name }}</h5>
